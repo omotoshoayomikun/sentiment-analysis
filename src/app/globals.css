@@ -7,6 +7,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --anchor-text-color: #007bff;
+  --bg-bg: linear-gradient(316deg, #ffe190 0%, #fa9e8c 74%);
+  --border-grey-color: #c2c2c2;
 }
 /* 
 @media (prefers-color-scheme: dark) {
@@ -16,3 +18,42 @@
     --background-end-rgb: 0, 0, 0;
   }
 } */
+
+
+.login_card {
+  width: 380px;
+  padding: 2.5rem 3.5rem;
+  border-radius: 4px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.button1 {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  background: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+  border-radius: 4px;
+  padding: 12px 10px;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+}
+
+.input {
+  background-color: transparent;
+  border: 1px solid var(--border-grey-color);
+  padding: 5px 35px 5px 20px;
+  height: 40px;
+  border-radius: 4px;
+  width: 100%;
+}
