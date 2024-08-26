@@ -1,0 +1,22 @@
+.navlin_container {
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.nav_body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link_cont {
+    display: flex;
+    color: white;
+}
+
+.link {
+    margin-inline: 10px;
+    display: flex;
+    font-size: 13px;
+    font-weight: bold;
+}

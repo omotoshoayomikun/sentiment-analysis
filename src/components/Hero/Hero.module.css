@@ -1,0 +1,7 @@
+.hero_content {
+  width: 100%;
+  height: 100vh;
+  /* background-color: #c62128; */
+  background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
+  padding-inline: 80px;
+}
