@@ -12,9 +12,9 @@ function page() {
     }
 
   return (
-    <div className="w-full h-[100vh]  bg-gradient-to-r from-purple-500 to-pink-500">
-      <div className="px-[90px]">
+    <div className="w-full h-[100vh]">
         <NavLink />
+      <div className="px-[90px]">
       </div>
       <div className="w-full h-full flex justify-center items-center">
         <div className={`login_card mt-[-140px]`}>

@@ -3,6 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { AiFillTikTok } from "react-icons/ai";
 import { FaSnapchatSquare } from "react-icons/fa";
 import styles from "./Hero.module.css";
+import Link from "next/link";
 
 function SocialOptions() {
   const Icons = [
@@ -39,18 +40,18 @@ function SocialOptions() {
   ];
 
   return (
-    <div className={styles.social_options_container}>
+    <div className={`sidePadding ${styles.social_options_container}`}>
       <h1 className="text-[30px] font-bold leading-[3.5rem] text-center mt-4">
         Choose The Social Media You Want To Sentiment Analyse Below
       </h1>
       <div className="flex justify-between gap-5 mt-9">
         {Icons.map((icon) => (
-          <div key={icon.title} className="cursor-pointer">
+          <Link href={`/create-sentiment?social=${icon.title}`} key={icon.title} className="cursor-pointer">
             <div className="flex justify-center items-center">
               <icon.icon color={icon.color} size={icon.size} />
             </div>
             <div className="text-[17px] mt-3 text-center">{icon.title}</div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

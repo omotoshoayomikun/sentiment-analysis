@@ -7,9 +7,10 @@ import { Input } from "../Form/Input";
 import Link from "next/link";
 function Hero() {
   return (
-    <div className={styles.hero_content}>
+    <div>
       <NavLink />
-      <div className="w-full flex justify-between gap-16 px-[10px] mt-5">
+    <div className={` ${styles.hero_content}  pt-8 sidePadding`}>
+      <div className="w-full flex justify-between gap-16 px-[10px]">
         <div className="flex-[2] flex flex-col justify-between pb-20 text-white overflow-x-hidden h-[calc(100vh-120px)]">
           <div>
             <h1 className="text-[50px] font-bold leading-[3.5rem]">
@@ -26,6 +27,7 @@ function Hero() {
           <SocialIcons />
         </div>
       </div>
+    </div>
     </div>
   );
 }

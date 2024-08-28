@@ -19,6 +19,10 @@
   }
 } */
 
+body {
+  background-color: rgb(243 244 246 );
+}
+
 
 .login_card {
   width: 380px;
@@ -56,4 +60,17 @@
   height: 40px;
   border-radius: 4px;
   width: 100%;
+}
+
+.textarea {
+  background-color: white;
+  border: 1px solid var(--border-grey-color);
+  padding: 5px 35px 5px 20px;
+  height: 40px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.sidePadding {
+  padding-inline: 80px;
 }

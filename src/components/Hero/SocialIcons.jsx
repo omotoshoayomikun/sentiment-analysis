@@ -52,7 +52,7 @@ function SocialIcons() {
             key={index}
             style={{ display: index === currentIndex ? "block" : "none" }}
           >
-            <icon.icon ke color={icon.color} size={icon.size} />
+            <icon.icon color={icon.color} size={icon.size} />
           </div>
         ))}
         {/* </div> */}

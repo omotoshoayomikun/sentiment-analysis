@@ -21,3 +21,21 @@ export const Input = (props) => {
     </>
   );
 };
+
+export const TextArea = (props) => {
+  return (
+    <>
+      <label className="text-[13px] font-[600]" htmlFor="">
+        {props.label}
+      </label>
+      <textarea
+        name=""
+        id=""
+        className="textarea"
+        placeholder={props.placeholder}
+        style={props.styles}
+        onChange={props.handleOnchange}
+      ></textarea>
+    </>
+  );
+};

@@ -1,16 +1,14 @@
 .hero_content {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 82px);
   /* background-color: #c62128; */
-  background-image: linear-gradient(147deg, #c62128 0%, #a00000 74%);
-  padding-inline: 80px;
+  background-image: linear-gradient(1850deg, rgb(8, 8, 118) 0%, #bf1b1b 84%);
 }
 
 .social_options_container {
   width: 100%;
-  padding-inline: 80px;
   padding-top: 20px;
   padding-bottom: 80px;
   background-color: #ffe190;
-  background-image: linear-gradient(316deg, #ffe190 0%, #fa9e8c 74%);
+  background-image: var(--bg-bg);
 }
