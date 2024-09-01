@@ -14,8 +14,6 @@ function page() {
   return (
     <div className="w-full h-[100vh]">
         <NavLink />
-      <div className="px-[90px]">
-      </div>
       <div className="w-full h-full flex justify-center items-center">
         <div className={`login_card mt-[-140px]`}>
           <h3 className="mb-5 text-[22px] font-bold text-center">LOGIN</h3>

@@ -22,10 +22,10 @@ function EmojiPicker() {
 
 
   return (
-    <div className="flex gap-10 justify-between">
+    <div className="flex gap-10 justify-evenly">
         {
             Emojis.map((emoji, index) => (
-                <div key={index} className='bg-[#3d924a52] rounded-[10px]  w-[120px] flex-4 p-2 py-6 text-center text-white'>
+                <div key={index} className='bg-[#3d924a52] rounded-[10px]  w-[100px] flex-4 p-2 py-4 text-center text-white'>
                     <div className="text-6xl md:py-2 py-1">{emoji.unicode}</div>
                 </div>
             ))

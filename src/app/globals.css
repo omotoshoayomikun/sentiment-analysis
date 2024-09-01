@@ -9,6 +9,10 @@
   --anchor-text-color: #007bff;
   --bg-bg: linear-gradient(316deg, #ffe190 0%, #fa9e8c 74%);
   --border-grey-color: #c2c2c2;
+  --soft-blue: #4a90e2;
+  --light-blue: #d0e4f2;
+  --mutted-grey: #b0bec5;
+  --very-light-grey: #f4f6f9;
 }
 /* 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +24,7 @@
 } */
 
 body {
-  background-color: rgb(243 244 246 );
+  background-color: #d0e4f2;
 }
 
 

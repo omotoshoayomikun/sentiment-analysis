@@ -4,10 +4,10 @@ import styles from "./NavLink.module.css";
 import Link from "next/link";
 import { FaCaretDown } from "react-icons/fa6";
 function NavLink() {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <div className={` sidePadding ${styles.navlin_container}`}>
+    <div className={` sidePadding ${styles.navlin_container} text-white`}>
       <div className={styles.nav_body}>
         <ul className={styles.link_cont}>
           <li className={styles.link}>
@@ -17,21 +17,21 @@ function NavLink() {
             <Link href="">ABOUT</Link>
           </li>
           <li className={styles.link}>
-            <Link href="">SENTIMENT ANALYSIS</Link>
+            <Link href="/sentiment-analysis">SENTIMENT ANALYSIS</Link>
           </li>
         </ul>
         {isLogin ? (
           <>
           <div className="relative">
             <div className="flex items-center">
-              <h3 className="mr-2">emmanuel@gmail.com</h3>
+              <h3 className="mr-2 text-xl">emmanuel@gmail.com</h3>
               <FaCaretDown />
             </div>
             <div className={`absolute ${styles.drop_bar} `}>
               <ul className="">
-                <li className=""><Link className="block" href="">Profile</Link></li>
-                <li className=""><Link className="block" href="">Settings</Link></li>
-                <li className=""><Link className="block" href="">Logout</Link></li>
+                <li className=""><Link href="/profile" className="block">Profile</Link></li>
+                <li className=""><Link href="" className="block">Settings</Link></li>
+                <li className=""><Link href="" className="block">Logout</Link></li>
               </ul>
             </div>
 
