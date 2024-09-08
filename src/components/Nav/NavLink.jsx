@@ -14,10 +14,13 @@ function NavLink() {
             <Link href="/">HOME</Link>
           </li>
           <li className={styles.link}>
+            <Link href="/sentiment-analysis">SENTIMENT ANALYSIS</Link>
+          </li>
+          <li className={styles.link}>
             <Link href="">ABOUT</Link>
           </li>
           <li className={styles.link}>
-            <Link href="/sentiment-analysis">SENTIMENT ANALYSIS</Link>
+            <Link href="/blog">BLOG</Link>
           </li>
         </ul>
         {isLogin ? (
