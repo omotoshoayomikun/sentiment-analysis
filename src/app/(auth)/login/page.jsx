@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-function page() {
+function Page() {
 
   const router = useRouter();
     const handlLogin = () => {
@@ -50,4 +50,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
