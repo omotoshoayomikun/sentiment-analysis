@@ -1,19 +1,21 @@
 import react from "react";
 
 export const Input = (props) => {
+
+  const {id, label, handleOnchange, rel_styles, name, ...values} = props
+
   return (
     <>
       <div className="">
         <label className="text-[13px] font-[600]" htmlFor="">
-          {props.label}
+          {label}
         </label>
         <div className={` mt-1`}>
           <input
-            type="text"
-            placeholder={props.placeholder}
+            {...values}
             className={`input`}
-            style={props.styles}
-            onChange={props.handleOnchange}
+            style={rel_styles}
+            onChange={(e) => handleOnchange(e, name)}
           />
           {/* <i className={styles.input_icon}></i> */}
         </div>

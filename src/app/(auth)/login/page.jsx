@@ -3,12 +3,14 @@ import { Btn } from "@/components/Form/Btn";
 import { Input } from "@/components/Form/Input";
 import NavLink from "@/components/Nav/NavLink";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function page() {
 
+  const router = useRouter();
     const handlLogin = () => {
-
+      router.push("/profile")
     }
 
   return (
