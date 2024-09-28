@@ -4,7 +4,12 @@ import styles from "./NavLink.module.css";
 import Link from "next/link";
 import { FaCaretDown } from "react-icons/fa6";
 function NavLink() {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle)
+  }
 
   return (
     <div className={` sidePadding ${styles.navlin_container} text-white`}>
@@ -17,7 +22,7 @@ function NavLink() {
             <Link href="/sentiment-analysis">SENTIMENT ANALYSIS</Link>
           </li>
           <li className={styles.link}>
-            <Link href="">ABOUT</Link>
+            <Link href="/about">ABOUT</Link>
           </li>
           <li className={styles.link}>
             <Link href="/blog">BLOG</Link>
@@ -26,10 +31,12 @@ function NavLink() {
         {isLogin ? (
           <>
           <div className="relative">
-            <div className="flex items-center">
+            <div className="flex items-center cursor-pointer" onClick={handleToggle}>
               <h3 className="mr-2 text-xl">emmanuel@gmail.com</h3>
               <FaCaretDown />
             </div>
+            {
+              toggle && (
             <div className={`absolute ${styles.drop_bar} `}>
               <ul className="">
                 <li className=""><Link href="/profile" className="block">Profile</Link></li>
@@ -37,6 +44,9 @@ function NavLink() {
                 <li className=""><Link href="" className="block">Logout</Link></li>
               </ul>
             </div>
+
+              )
+            }
 
           </div>
           </>
