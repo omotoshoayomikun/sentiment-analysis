@@ -46,7 +46,7 @@ function SentimentAnalysis({ data }) {
         Reviews
       </div>
       {data.reviews.map((review, index) => (
-        <div className="flex gap-5 mb-4 pb-3  border-b-2 border-dashed border-[#ecf0f4]">
+        <div key={index} className="flex gap-5 mb-4 pb-3  border-b-2 border-dashed border-[#ecf0f4]">
           <div className="flex-1">
             <h1 className="text-sm">
              {review.msg}
