@@ -9,7 +9,7 @@ import SentimentAnalysis from "@/components/Sentiment/SentimentAnalysis";
 function page() {
   const Details = [
     {
-      label: "Facebook",
+      label: "facebook",
       rate: [80, 20, 10],
       reviews: [
         {
@@ -33,7 +33,7 @@ function page() {
       ],
     },
     {
-      label: "Instagram",
+      label: "instagram",
       rate: [70, 10, 20],
       reviews: [
         {
@@ -57,7 +57,7 @@ function page() {
       ],
     },
     {
-      label: "Twitter(X)",
+      label: "twitter(X)",
       rate: [60, 10, 30],
       reviews: [
         {
@@ -81,7 +81,7 @@ function page() {
       ],
     },
     {
-      label: "Snapchat",
+      label: "snapchat",
       rate: [90, 4, 6],
       reviews: [
         {
@@ -105,7 +105,7 @@ function page() {
       ],
     },
     {
-      label: "Tiktok",
+      label: "tiktok",
       rate: [40, 20, 40],
       reviews: [
         {

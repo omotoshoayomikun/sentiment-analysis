@@ -22,7 +22,7 @@ function SentimentAnalysis({ data }) {
 
   return (
     <div className="w-full bg-white rounded-lg p-5 shadow-md">
-      <div className="text-[25px] font-bold leading-[3rem] mb-2 text-center">
+      <div className="text-[25px] font-bold leading-[3rem] mb-2 text-center capitalize">
         {data.label}
       </div>
       <div className="h-[250px] flex justify-center">
@@ -67,7 +67,7 @@ function SentimentAnalysis({ data }) {
         </div>
       )).slice(0, 3)}
       <div className="flex justify-center">
-        <Link href="/create-sentiment" className="text-[--anchor-text-color]">
+        <Link href={`/create-sentiment/?social=${data.label}`} className="text-[--anchor-text-color]">
           View all Reviews
         </Link>
       </div>
