@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
 const SentimentSchema = new mongoose.Schema({
-    userId: String,
+    userId: {
+        type: mongoose.Schema.ObjectId,
+        ref: "User"
+    },
     message: {
         type: String,
         required: true

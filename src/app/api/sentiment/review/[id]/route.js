@@ -1,5 +1,6 @@
-import { connectDB } from "../../../../../lib/database";
-import { Sentiment } from "../../../../../lib/Models/Sentiment";
+import { NextResponse } from "next/server"
+import { connectDB } from "../../../../../../lib/database"
+import { Sentiment } from "../../../../../../lib/Models/Sentiment"
 
 export const POST = async (request) => {
     try {
@@ -17,3 +18,14 @@ export const POST = async (request) => {
         return NextResponse.status(500).json({ message: "Internal Server Error" });
     }
 } 
+
+export const GET = async (request, {params}) => {
+    try {
+        await connectDB()
+        const result = await Sentiment.find({social: params.id})
+        return NextResponse.json({message: "Success", data: result}, { status: 200 })
+
+    } catch (err) {
+        return NextResponse.json({ message: err}, {status: 404})
+    }
+}

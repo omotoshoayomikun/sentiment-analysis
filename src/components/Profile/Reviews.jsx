@@ -1,173 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { ToastOption } from "@/Data/ToastOption";
+import { GetApi } from "../../../lib/Actions";
 
-function Reviews() {
+function Reviews({ userId }) {
+  const [loading, setLoading] = useState({ login: false });
+  const [data, setData] = useState([]);
+  const [len, setLen] = useState({ start: 0, end: 3 });
+
+  useEffect(() => {
+    const GetData = async () => {
+      try {
+        setLoading({ ...loading, login: true });
+        const response = await GetApi(
+          `${process.env.NEXT_PUBLIC_BASEURL}/api/user/profile/review/${userId}`
+        );
+        if (!response.success) {
+          toast.error(response.message, ToastOption);
+        } else {
+          setData(response.data);
+        }
+      } catch (error) {
+        toast.error(error.message, ToastOption);
+      } finally {
+        setLoading({ ...loading, login: false });
+      }
+    };
+    GetData();
+  }, [userId]);
+
+  if (loading.login) {
+    return <>Loading...</>;
+  }
+
   return (
     <>
-      <div className="h-[387px] overflow-hidden overflow-y-auto">
-        <div className="flex gap-5 mb-8 pb-6  border-b-2 border-dashed border-[#ecf0f4]">
-          <div className="flex-1">
-            <h1 className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              unde ex ipsum obcaecati hic saepe aperiam ullam adipisci
-            </h1>
-            <div className="flex text-[#90a4ae] text-[16px] gap-5">
-              <p className="">
-                <span>Facebook</span>
-              </p>
-              <p className="">
-                <span> - 22/10/2024</span>
-              </p>
+      <div className="h-[350px] overflow-hidden overflow-y-auto">
+        {data.map((value, index) => (
+          <div
+            key={index}
+            className="flex gap-5 mb-4 pb-4 border-b-2 border-dashed border-[#ecf0f4]"
+          >
+            <div className="flex-1">
+              <h1 className="text-xl">{value.message}</h1>
+              <div className="flex text-[#90a4ae] text-[16px] gap-5">
+                <p>
+                  <span>{value.social}</span>
+                </p>
+                <p>
+                  <span> - {value.createdAt}</span>
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
+              <div className="text-center text-4xl mb-2">
+                {value.sentiment == "positive" && "😍"}
+                {value.sentiment == "neutral" && "🙂"}
+                {value.sentiment == "negative" && "🙁"}
+              </div>
+              <p>{value.sentiment}</p>
             </div>
           </div>
-          <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-            <div className="text-center text-4xl mb-2">😍</div>
-            <p>Positive</p>
-          </div>
-        </div>
-        <div className="flex gap-5 mb-8 pb-6  border-b-2 border-dashed border-[#ecf0f4]">
-          <div className="flex-1">
-            <h1 className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              unde ex ipsum obcaecati hic saepe aperiam ullam adipisci
-            </h1>
-            <div className="flex text-[#90a4ae] text-[16px] gap-5">
-              <p className="">
-                <span>Facebook</span>
-              </p>
-              <p className="">
-                <span> - 22/10/2024</span>
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-            <div className="text-center text-4xl mb-2">😍</div>
-            <p>Positive</p>
-          </div>
-        </div>
-        <div className="flex gap-5 mb-8 pb-6  border-b-2 border-dashed border-[#ecf0f4]">
-          <div className="flex-1">
-            <h1 className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              unde ex ipsum obcaecati hic saepe aperiam ullam adipisci
-            </h1>
-            <div className="flex text-[#90a4ae] text-[16px] gap-5">
-              <p className="">
-                <span>Facebook</span>
-              </p>
-              <p className="">
-                <span> - 22/10/2024</span>
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-            <div className="text-center text-4xl mb-2">😍</div>
-            <p>Positive</p>
-          </div>
-        </div>
-        <div className="flex gap-5 mb-8 pb-6  border-b-2 border-dashed border-[#ecf0f4]">
-          <div className="flex-1">
-            <h1 className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              unde ex ipsum obcaecati hic saepe aperiam ullam adipisci
-            </h1>
-            <div className="flex text-[#90a4ae] text-[16px] gap-5">
-              <p className="">
-                <span>Facebook</span>
-              </p>
-              <p className="">
-                <span> - 22/10/2024</span>
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-            <div className="text-center text-4xl mb-2">😍</div>
-            <p>Positive</p>
-          </div>
-        </div>
-        <div className="flex gap-5 mb-8 pb-6  border-b-2 border-dashed border-[#ecf0f4]">
-          <div className="flex-1">
-            <h1 className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              unde ex ipsum obcaecati hic saepe aperiam ullam adipisci
-            </h1>
-            <div className="flex text-[#90a4ae] text-[16px] gap-5">
-              <p className="">
-                <span>Facebook</span>
-              </p>
-              <p className="">
-                <span> - 22/10/2024</span>
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-            <div className="text-center text-4xl mb-2">😍</div>
-            <p>Positive</p>
-          </div>
-        </div>
-        <div className="flex gap-5 mb-8 pb-6  border-b-2 border-dashed border-[#ecf0f4]">
-          <div className="flex-1">
-            <h1 className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              unde ex ipsum obcaecati hic saepe aperiam ullam adipisci
-            </h1>
-            <div className="flex text-[#90a4ae] text-[16px] gap-5">
-              <p className="">
-                <span>Facebook</span>
-              </p>
-              <p className="">
-                <span> - 22/10/2024</span>
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-            <div className="text-center text-4xl mb-2">😍</div>
-            <p>Positive</p>
-          </div>
-        </div>
-        <div className="flex gap-5 mb-8 pb-6  border-b-2 border-dashed border-[#ecf0f4]">
-          <div className="flex-1">
-            <h1 className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              unde ex ipsum obcaecati hic saepe aperiam ullam adipisci
-            </h1>
-            <div className="flex text-[#90a4ae] text-[16px] gap-5">
-              <p className="">
-                <span>Facebook</span>
-              </p>
-              <p className="">
-                <span> - 22/10/2024</span>
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-            <div className="text-center text-4xl mb-2">😍</div>
-            <p>Positive</p>
-          </div>
-        </div>
-        <div className="flex gap-5 mb-8 pb-6  border-b-2 border-dashed border-[#ecf0f4]">
-          <div className="flex-1">
-            <h1 className="text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
-              unde ex ipsum obcaecati hic saepe aperiam ullam adipisci
-            </h1>
-            <div className="flex text-[#90a4ae] text-[16px] gap-5">
-              <p className="">
-                <span>Facebook</span>
-              </p>
-              <p className="">
-                <span> - 22/10/2024</span>
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-            <div className="text-center text-4xl mb-2">😍</div>
-            <p>Positive</p>
-          </div>
-        </div>
-
+        ))}
         {/* VIEW MORE BUTTON */}
-      <div className="float-right mr-4 text-[--anchor-text-color] text-2xl">View More</div>
       </div>
+      {/* <div className="float-right mr-4 text-[--anchor-text-color] text-xl">
+        View More
+      </div> */}
     </>
   );
 }

@@ -46,7 +46,7 @@ function SocialOptions() {
       </h1>
       <div className="flex justify-between gap-5 mt-9">
         {Icons.map((icon) => (
-          <Link href={`/create-sentiment?social=${icon.title}`} key={icon.title} className="cursor-pointer">
+          <Link href={`/create-sentiment/${icon.title}`} key={icon.title} className="cursor-pointer">
             <div className="flex justify-center items-center">
               <icon.icon color={icon.color} size={icon.size} />
             </div>

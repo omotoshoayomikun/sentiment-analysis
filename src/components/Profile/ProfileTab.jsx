@@ -1,10 +1,9 @@
 "use client";
-
 import React, { useState } from "react";
 import Reviews from "./Reviews";
 import Settings from "./Settings";
 
-function ProfileTab() {
+function ProfileTab({ userId, userData }) {
   const [tab, setTab] = useState("reviews");
 
   return (
@@ -13,21 +12,19 @@ function ProfileTab() {
         <ul className="flex">
           <li
             onClick={() => setTab("reviews")}
-            className={`pb-[15px] pt-2 px-[20px] hover:border-b-2 hover:border-[--anchor-text-color] border-b-2 ${tab == "reviews" ? "border-[--anchor-text-color]" : "border-b-transparent"} cursor-pointer`}
+            className={`pb-[15px] pt-2 px-[20px] hover:border-b-2 hover:border-[--anchor-text-color] border-b-2 ${tab === "reviews" ? "border-[--anchor-text-color]" : "border-b-transparent"} cursor-pointer`}
           >
             Your Reviews
           </li>
           <li
             onClick={() => setTab("settings")}
-            className={`pb-[15px] pt-2 px-[20px] hover:border-b-2 hover:border-[--anchor-text-color] border-b-2 ${tab == "settings" ? "border-[--anchor-text-color]" : "border-b-transparent"} cursor-pointer`}
+            className={`pb-[15px] pt-2 px-[20px] hover:border-b-2 hover:border-[--anchor-text-color] border-b-2 ${tab === "settings" ? "border-[--anchor-text-color]" : "border-b-transparent"} cursor-pointer`}
           >
             Settings
           </li>
         </ul>
       </div>
-      
-        {tab == "reviews" ? <Reviews /> : <Settings />}
-    
+      {tab === "reviews" ? <Reviews userId={userId} /> : <Settings data={userData} />}
     </>
   );
 }

@@ -4,13 +4,14 @@ import React, {useState} from "react";
 import { Input } from "../Form/Input";
 import { Btn } from "../Form/Btn";
 
-function Settings() {
+function Settings({data}) {
+
   const [value, setValue] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    phone: "",
-    password: ""
+    firstname: data.firstname || "",
+    lastname: data.lastname || "",
+    email: data.email || "",
+    phone: data.phone || "",
+    password: "******",
   });
 
   const Inputs = [

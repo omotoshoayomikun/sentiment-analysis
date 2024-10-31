@@ -4,17 +4,17 @@ function EmojiPicker({sentiment}) {
 
     const Emojis = [
         {
-            name: "Positve",
+            name: "positive",
             unicode: "😍",
             value: 1
         },
         {
-            name: "Neutral",
+            name: "neutral",
             unicode: "🙂",
             value: 2
         },
         {
-            name: "Negative",
+            name: "negative",
             unicode: "🙁",
             value: 3
         },

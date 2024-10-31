@@ -36,8 +36,9 @@ export const TextArea = (props) => {
         className="textarea"
         placeholder={props.placeholder}
         style={props.styles}
-        onChange={props.handleOnchange}
-      ></textarea>
+        onChange={(e) => props.handleOnchange(e)}
+          value={props.value}
+        />
     </>
   );
 };
