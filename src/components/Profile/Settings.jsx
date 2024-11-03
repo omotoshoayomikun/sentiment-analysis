@@ -11,7 +11,6 @@ function Settings({data}) {
     lastname: data.lastname || "",
     email: data.email || "",
     phone: data.phone || "",
-    password: "******",
   });
 
   const Inputs = [
@@ -41,13 +40,6 @@ function Settings({data}) {
       name: "phone",
       label: "Phone Number",
       type: "tel",
-
-    },
-    {
-      id: 5,
-      name: "password",
-      label: "Password",
-      type: "password",
 
     },
   ];

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { ToastOption } from "@/Data/ToastOption";
 import { GetApi } from "../../../lib/Actions";
+import Loading from "../Loading/Loading";
 
 function Reviews({ userId }) {
   const [loading, setLoading] = useState({ login: false });
@@ -30,12 +31,18 @@ function Reviews({ userId }) {
   }, [userId]);
 
   if (loading.login) {
-    return <>Loading...</>;
+    return (
+      <>
+      <div className="w-full h-[350px] relative">
+        <Loading />
+    </div>
+      </>
+    );
   }
 
   return (
     <>
-      <div className="h-[350px] overflow-hidden overflow-y-auto">
+      <div className="h-[387px] overflow-hidden overflow-y-auto">
         {data.map((value, index) => (
           <div
             key={index}

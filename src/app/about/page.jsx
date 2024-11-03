@@ -1,3 +1,5 @@
+"use client"
+
 import NavLink from "@/components/Nav/NavLink";
 import React from "react";
 
@@ -7,7 +9,7 @@ function page() {
       <NavLink />
       <div className="sidePadding mt-8">
         <div className="">
-          <h1 className="text-[40px] font-bold leading-[3.5rem]">About Us </h1>
+          <h1 className="text-[30px] font-bold leading-[3.5rem]">About Us </h1>
           <p>
             Welcome to our website, where understanding sentiment is just a
             click away. We are passionate about providing you with the tools and
@@ -18,7 +20,7 @@ function page() {
           </p>
         </div>
         <div className="">
-          <h1 className="text-[40px] font-bold leading-[3.5rem]">
+          <h1 className="text-[30px] font-bold leading-[3.5rem]">
             Our Mission
           </h1>
           <p>
@@ -31,10 +33,10 @@ function page() {
           </p>
         </div>
         <div className="">
-          <h1 className="text-[40px] font-bold leading-[3.5rem]">
+          <h1 className="text-[30px] font-bold leading-[3.5rem]">
             What we offered
           </h1>
-          <ul className="">
+          <ul className="list-disc pl-10 my-5">
             <li>
               <span className="font-bold">Share Your Sentiments:</span> Our
               platform allows you to easily contribute your opinions and
@@ -57,10 +59,10 @@ function page() {
           </ul>
         </div>
         <div className="">
-          <h1 className="text-[40px] font-bold leading-[3.5rem]">
+          <h1 className="text-[30px] font-bold leading-[3.5rem]">
             Why Choose Us?
           </h1>
-          <ul className="">
+          <ul className="list-disc pl-10 my-5">
             <li>
               <span className="font-bold">User-Friendly Interface:</span>Our
               platform is designed with simplicity in mind, making it easy for
@@ -77,14 +79,14 @@ function page() {
               algorithms to ensure accurate and reliable data.
             </li>
             <li>
-              <span className="font-bold">• Community Focused:</span>We value
+              <span className="font-bold">Community Focused:</span>We value
               every user's contribution and strive to create a community where
               diverse voices are heard and respected.
             </li>
           </ul>
         </div>
         <div className="">
-          <h1 className="text-[40px] font-bold leading-[3.5rem]">
+          <h1 className="text-[30px] font-bold leading-[3.5rem]">
             Our Commitment
           </h1>
           <p>
@@ -105,6 +107,17 @@ function page() {
           </p>
         </div>
       </div>
+      <style jsx>
+        {`
+          p,
+          li {
+            font-size: 20px;
+          }
+          h3 {
+            font-size: 28px;
+          }
+        `}
+      </style>
     </>
   );
 }

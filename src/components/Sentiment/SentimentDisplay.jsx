@@ -30,6 +30,7 @@ function SentimentDisplay({ social }) {
 
   if (loading) return <div>Loading...</div>;
 
+
   return (
     <>
       <h1 className="text-[30px] font-bold leading-[3.5rem] mb-3">

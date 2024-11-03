@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { ToastOption } from "@/Data/ToastOption";
 import dynamic from 'next/dynamic';
 import { toast } from "react-toastify";
+import Loading from "@/components/Loading/Loading";
 
 function Page() {
 
@@ -31,6 +32,7 @@ function Page() {
             setLoading({ ...loading, login: false });
             toast.error(response.message, ToastOption);
           } else {
+            setLoading({ ...loading, login: false });
             setData(response.data);
             // toast.success(response.message, ToastOption);
           }
@@ -49,7 +51,14 @@ function Page() {
   }, []);
 
   if(loading.login) {
-    return <>Loading...</>
+    return(
+      <>
+      <NavLink />
+      <div className="w-full h-[calc(100vh-84px)] top-[84px] fixed">
+        <Loading />
+    </div>
+      </>
+    )
   }
 
   return (
