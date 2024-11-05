@@ -102,6 +102,14 @@ function Page() {
                 disabled={loading.login}
               />
             </div>
+            <div className="ml-auto mr-auto w-[max-content] mt-2">
+              <Link
+                href="/sign-up"
+                className="text-center text-[--anchor-text-color] text-[12px]"
+              >
+                sign-up
+              </Link>
+            </div>
           </div>
         </div>
       </div>
