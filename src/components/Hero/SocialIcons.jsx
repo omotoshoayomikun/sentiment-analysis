@@ -38,7 +38,7 @@ function SocialIcons() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % Icons.length);
-    }, 8000); // Change image every 2 seconds
+    }, 4000); // Change image every 2 seconds
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [Icons.length]);
