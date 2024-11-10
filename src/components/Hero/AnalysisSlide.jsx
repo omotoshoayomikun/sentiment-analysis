@@ -3,13 +3,7 @@ import React from "react";
 function AnalysisSlide() {
   return (
     <>
-      <div className="flex gap-6 overflow-hidden">
-        <div className="">
-          <h2 className="sm:text-[30px] text-[25px]  font-bold w-[120px] text-green-800">
-            34567890
-          </h2>
-          <small className="text-[15px]">Total gathered analysis</small>
-        </div>
+      <div className="flex gap-6 md:gap-11 overflow-hidden">
         <div className="">
           <h2 className="sm:text-[30px] text-[25px]  font-bold w-[120px] text-green-800">
             34567890
