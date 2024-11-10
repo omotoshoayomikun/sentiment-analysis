@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
-import { connectDB } from "../../../../../../lib/database"
-import { Sentiment } from "../../../../../../lib/Models/Sentiment"
+import { connectDB } from "../../../../../lib/database"
+import { Sentiment } from "../../../../../lib/Models/Sentiment"
 
 export const GET = async (request) => {
     try {

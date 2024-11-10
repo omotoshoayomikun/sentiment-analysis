@@ -7,7 +7,7 @@ import Link from "next/link";
 import SentimentAnalysis from "@/components/Sentiment/SentimentAnalysis";
 import Loading from "@/components/Loading/Loading";
 
-function page() {
+function Page() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [chartDate, setChartDate] = useState([0, 0, 0]);
@@ -179,4 +179,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
