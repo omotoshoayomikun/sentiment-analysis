@@ -10,17 +10,17 @@ function Hero() {
     <div>
       <NavLink />
     <div className={` ${styles.hero_content}  pt-8 sidePadding`}>
-      <div className="w-full flex justify-between gap-16 px-[10px]">
-        <div className="flex-[2] flex flex-col justify-between pb-20 text-white overflow-x-hidden h-[calc(100vh-120px)]">
+      <div className="w-full flex lg:flex-row flex-col-reverse  justify-between md:gap-16 gap-3 px-[10px]">
+        <div className="flex-[2] flex flex-col justify-between text-white overflow-hidden">
           <div>
-            <h1 className="text-[50px] font-bold leading-[3.5rem]">
+            <h1 className="text-[50px] font-bold leading-[3.5rem]  md:block hidden">
               Welcome To The World Of Sentiment
             </h1>
-            <h5 className={`mt-4 mb-7`}>Sentiment Analysis/Emotion Analysis</h5>
+            <h5 className={`sm:mt-4 sm:mb-7 sm:text-left text-center`}>Sentiment Analysis/Emotion Analysis</h5>
           </div>
           <AnalysisSlide />
-          <div className="mt-16 text-[19px]">
-           <Link href="" title="Click to see full details" className="text-green-600 font-bold text-[22px]">View Full Details</Link> and Perform <Link href=""  title="Click to see full details"  className="text-green-600 font-bold text-[22px]">Sentiment</Link> Analysis On Social
+          <div className="mt-16 sm:text-[19px] text-[16px]">
+           <Link href="" title="Click to see full details" className="text-green-600 font-bold sm:text-[22px] text-[18px]">View Full Details</Link> and Perform <Link href=""  title="Click to see full details"  className="text-green-600 font-bold sm:text-[22px] text-[18px]">Sentiment</Link> Analysis On Social
           </div>
         </div>
         <div className="flex-1">

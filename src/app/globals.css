@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -27,7 +35,6 @@ body {
   background-color: #d0e4f2;
 }
 
-
 .login_card {
   width: 380px;
   padding: 2.5rem 3.5rem;
@@ -35,9 +42,7 @@ body {
   background-color: #ffffff;
   -webkit-box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5);
-
 }
-
 
 .button1 {
   cursor: pointer;
@@ -79,4 +84,10 @@ body {
 
 .sidePadding {
   padding-inline: 80px;
+}
+
+@media screen and (max-width: 980px) {
+  .sidePadding {
+    padding-inline: 20px;
+  }
 }

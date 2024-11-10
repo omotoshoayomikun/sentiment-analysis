@@ -6,19 +6,7 @@ import Link from "next/link";
 
 function SentimentAnalysis({ data }) {
   
-
-  const [chart, setChart] = useState({
-    // labels: ChartAnalysis.map((data) => data.sentiment),
-    datasets: [
-      {
-        label: "Analysis",
-        data: data.rate.map((data) => data),
-        backgroundColor: ["green", "yellow", "red"],
-        borderColor: "grey",
-        borderWidth: 1,
-      },
-    ],
-  });
+  const chart = [9, 5, 4]
 
   return (
     <div className="w-full bg-white rounded-lg p-5 shadow-md">
@@ -26,7 +14,7 @@ function SentimentAnalysis({ data }) {
         {data.label}
       </div>
       <div className="h-[250px] flex justify-center">
-        <PieChart chartData={chart} />
+        <PieChart ChartAnalysis={chart} />
       </div>
       <div className="flex justify-between mt-2">
         <div className="flex items-center gap-1 text-sm">

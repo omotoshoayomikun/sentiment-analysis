@@ -33,7 +33,7 @@ function Reviews({ userId }) {
   if (loading.login) {
     return (
       <>
-      <div className="w-full h-[350px] relative">
+      <div className="w-full h-[340px] relative">
         <Loading />
     </div>
       </>
@@ -42,11 +42,11 @@ function Reviews({ userId }) {
 
   return (
     <>
-      <div className="h-[387px] overflow-hidden overflow-y-auto">
+      <div className="h-[340px] overflow-hidden overflow-y-auto">
         {data.map((value, index) => (
           <div
             key={index}
-            className="flex gap-5 mb-4 pb-4 border-b-2 border-dashed border-[#ecf0f4]"
+            className="flex gap-5 mb-4 pb-3 border-b-2 border-dashed border-[#ecf0f4]"
           >
             <div className="flex-1">
               <h1 className="text-xl">{value.message}</h1>
@@ -60,7 +60,7 @@ function Reviews({ userId }) {
               </div>
             </div>
             <div className="flex justify-center items-center flex-col w-[110px] border-l-2 border-[#dee2e6]">
-              <div className="text-center text-4xl mb-2">
+              <div className="text-center text-4xl mb-1">
                 {value.sentiment == "positive" && "😍"}
                 {value.sentiment == "neutral" && "🙂"}
                 {value.sentiment == "negative" && "🙁"}

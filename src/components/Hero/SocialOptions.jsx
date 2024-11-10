@@ -41,14 +41,14 @@ function SocialOptions() {
 
   return (
     <div className={`sidePadding ${styles.social_options_container}`}>
-      <h1 className="text-[30px] font-bold leading-[3.5rem] text-center mt-4">
+      <h1 className="md:text-[30px] text-[20px] font-bold md:leading-[3.5rem] text-center mt-4">
         Choose The Social Media You Want To Sentiment Analyse Below
       </h1>
-      <div className="flex justify-between gap-5 mt-9">
+      <div className="flex justify-between md:gap-5 gap-2 mt-9 flex-wrap">
         {Icons.map((icon) => (
           <Link href={`/create-sentiment/${icon.title}`} key={icon.title} className="cursor-pointer">
             <div className="flex justify-center items-center">
-              <icon.icon color={icon.color} size={icon.size} />
+              <icon.icon color={icon.color} className="md:text-[150px] text-[70px]" />
             </div>
             <div className="text-[17px] mt-3 text-center">{icon.title}</div>
           </Link>

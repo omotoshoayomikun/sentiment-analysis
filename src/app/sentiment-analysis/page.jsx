@@ -1,12 +1,38 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavLink from "@/components/Nav/NavLink";
 import { ChartAnalysis } from "@/Data/ChartData";
 import PieChart from "@/components/Charts/PieChart";
 import Link from "next/link";
 import SentimentAnalysis from "@/components/Sentiment/SentimentAnalysis";
+import Loading from "@/components/Loading/Loading";
 
 function page() {
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [chartDate, setChartDate] = useState([0, 0, 0]);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await GetApi(
+          `${process.env.NEXT_PUBLIC_BASEURL}/api/sentiment/review`
+        );
+        if (!response.success) {
+          toast.error(data.message || "Error fetching data", ToastOption);
+        } else {
+          setReviews(response.data);
+        }
+      } catch (err) {
+        // toast.error(err.message, ToastOption);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReviews();
+  }, []);
+
   const Details = [
     {
       label: "facebook",
@@ -129,6 +155,15 @@ function page() {
       ],
     },
   ];
+
+  
+  if (loading) {
+    return (
+      <div className="w-full h-[100vh-84px]">
+        <Loading />
+      </div>
+    );
+  }
 
   return (
     <>

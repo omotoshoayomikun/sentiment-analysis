@@ -111,18 +111,18 @@ function Page() {
   return (
     <>
       <NavLink />
-      <div className="w-full h-auto relative">
+      <div className="w-full h-auto relative pb-[50px]">
         <div className="sidePadding pt-8">
-          <div className="w-full flex justify-between gap-16 px-[10px]">
-            <div className="flex-1">
-              {value.icon && <value.icon color={value.color} size={390} />}
+          <div className="w-full md:flex md:flex-row flex-col md:justify-between justify-center items-center lg:gap-16 md:gap-7 px-[10px]">
+            <div className="flex-1 md:text-left flex justify-center">
+              {value.icon && <value.icon color={value.color} className="lg:text-[390px] md:text-[290px] text-[170px]" />}
             </div>
-            <div className="flex-[2] pb-3 text-b">
-              <div className="w-[500px]">
-                <h1 className="text-[55px] font-bold leading-[3.5rem]">Sentiment Analysis</h1>
-                <h5 className="mt-4 mb-7">Categories reviews under positive, Neutral and Negative</h5>
+            <div className="flex-[1] pb-3 text-b">
+              <div className="md:w-[500px]">
+                <h1 className="md:text-[55px] text-[40px] text-center font-bold md:leading-[3.5rem]">Sentiment Analysis</h1>
+                <h5 className="mt-4 mb-7 text-center">Categories reviews under positive, Neutral and Negative</h5>
                 <EmojiPicker sentiment={value.sentiment} />
-                <TextArea styles={{ height: "150px" }} placeholder="Write your Reviews" handleOnchange={handleOnchange} value={value.message} />
+                <TextArea styles={{ height: "150px", marginTop: "20px" }} placeholder="Write your Reviews" handleOnchange={handleOnchange} value={value.message} />
                 <Btn title="send" disabled={loading.login} styles={{ width: "max-content", paddingLeft: "30px", paddingRight: "30px", marginTop: "5px", float: "right" }} handleClick={handleCreateSentiment} />
               </div>
             </div>

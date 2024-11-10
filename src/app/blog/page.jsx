@@ -31,7 +31,7 @@ function page() {
     <>
       <NavLink />
       <div className="sidePadding w-full h-auto pb-14  mt-8">
-        <div className="grid gap-10 grid-cols-3">
+        <div className="grid gap-10 lg:grid-cols-3 md:grid-cols-2">
           {
             Blogs.map((blog, index) => (
               <BlogList key={index} data={blog} />

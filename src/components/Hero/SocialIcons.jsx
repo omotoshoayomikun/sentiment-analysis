@@ -45,38 +45,19 @@ function SocialIcons() {
 
   return (
     <div>
-      <div className="flex justify-center items-center h-[70vh]">
+      <div className="sm:text-[25px] text-[20px] text-center mb-5 font-bold md:hidden block text-white">
+        Welcome To The World Of Sentiment
+      </div>
+      <div className="flex justify-center items-center">
         {/* <div className="flex justify-center items-center"> */}
         {Icons.map((icon, index) => (
           <div
             key={index}
             style={{ display: index === currentIndex ? "block" : "none" }}
           >
-            <icon.icon color={icon.color} size={icon.size} />
+            <icon.icon color={icon.color} className={`sm:text-[370px] text-[250px]`} />
           </div>
         ))}
-        {/* </div> */}
-        {/* <div className="flex justify-between">
-          <div>
-            <FaInstagram color="#E1306C" size={100} />
-          </div>
-          <div>
-            <FaFacebook color="#4267B2" size={100} />
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div>
-            <FaTwitter color="#1DA1F2" size={100} />
-          </div>
-        </div>
-        <div className="flex justify-between">
-          <div>
-            <AiFillTikTok color="" size={100} />
-          </div>
-          <div>
-            <FaSnapchatSquare color="#FFFC00" size={100} />
-          </div>
-        </div> */}
       </div>
     </div>
   );
