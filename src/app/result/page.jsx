@@ -226,7 +226,7 @@ function Page() {
             />
             <hr />
             {/* <SentimentLineChart data={memoizedData} /> */}
-            <SentimentOverview data={data} />
+            <SentimentOverview data={chartData} />
           </div>
           <div
             className="card mt-5"
@@ -243,7 +243,7 @@ function Page() {
               </div>
             ))}
         </div>
-        <div className="flex-1">
+        <div className="flex-1 w-[370px]">
           <div className="card">
             <SourceSentiment />
             <SentimentSelect
