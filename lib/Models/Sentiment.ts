@@ -16,7 +16,7 @@ const SentimentSchema = new mongoose.Schema({
     },
     social: {
         type: String,
-        required: true
+        // required: true
     }
 }, {timestamps: true})
 

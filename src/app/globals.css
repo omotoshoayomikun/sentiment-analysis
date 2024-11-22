@@ -35,6 +35,10 @@ body {
   background-color: #d0e4f2;
 }
 
+.card {
+  @apply block w-full p-6 bg-white border border-gray-200 rounded-lg shadow
+}
+
 .login_card {
   width: 380px;
   padding: 2.5rem 3.5rem;
@@ -59,6 +63,27 @@ body {
   color: #ffffff;
   background: linear-gradient(147deg, #c62128 0%, #a00000 74%);
   border-radius: 4px;
+  padding: 12px 10px;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+}
+
+.button-round {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  /* margin-top: 30px; */
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  /* background: linear-gradient(147deg, #c62128 0%, #a00000 74%); */
+  background: linear-gradient(147deg, #2f83dc 0%, #007bff 74%);
+  /* border-radius: 4px; */
   padding: 12px 10px;
   z-index: 1;
   transition: all 0.3s ease-out;
@@ -90,4 +115,73 @@ body {
   .sidePadding {
     padding-inline: 20px;
   }
+}
+
+.radios {
+  min-width: 60px;
+  height: 25px;
+  /* border-radius: 5px; */
+  background-color: transparent;
+  /* border: 1px solid #d5dfe6; */
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /* user-select: none; */
+  /* margin-bottom: 16px; */
+}
+
+.radios label {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.radios label input {
+  position: absolute;
+  /* z-index: -1; */
+  opacity: 0;
+  transform: scale(6);
+  left: 35%;
+  top: 50%;
+  cursor: pointer;
+}
+
+.radios label span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 12px;
+  /* font-weight: 700; */
+  /* line-height: 40px; */
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+  border: 2px solid var(--soft-blue);
+  background: #fff;
+
+}
+
+.radios label:nth-of-type(1) span {
+  border-top-left-radius: 25px !important;
+  border-bottom-left-radius: 25px !important;
+}
+
+.radios label:nth-of-type(2) span {
+  border-top-right-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+}
+
+.radios label input:checked~span {
+  /* -webkit-border-radius: 5px; */
+  /* border-radius: 5px; */
+  background-color: #fff;
+  box-shadow: 0 0 4px 0 rgba(131, 102, 255, .14);
+  border-color: var(--soft-blue);
+  color: #fff;
+  background: var(--soft-blue);
 }

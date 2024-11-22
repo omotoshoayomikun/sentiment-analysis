@@ -39,7 +39,7 @@ function NavLink() {
               <Link href="/">HOME</Link>
             </li>
             <li className={styles.link}>
-              <Link href="/sentiment-analysis">SENTIMENT ANALYSIS</Link>
+              <Link href="/result">SENTIMENT ANALYSIS</Link>
             </li>
             <li className={styles.link}>
               <Link href="/about">ABOUT</Link>
@@ -92,7 +92,7 @@ function NavLink() {
             </ul>
           )}
         </div>
-        <div className={`md:hidden block float-right`}>
+        <div className={`md:hidden block ml-auto`}>
           <div className={` cursor-pointer`} onClick={() => setToggleSm(!toggleSm)}>
             <CiMenuFries color="#fff" size={30} className="font-bold" />
           </div>
@@ -107,7 +107,7 @@ function NavLink() {
             <Link href="/">HOME</Link>
           </li>
           <li className={styles.link}>
-            <Link href="/sentiment-analysis">SENTIMENT ANALYSIS</Link>
+            <Link href="/result">SENTIMENT ANALYSIS</Link>
           </li>
           <li className={styles.link}>
             <Link href="/about">ABOUT</Link>
@@ -132,7 +132,7 @@ function NavLink() {
             </div>
           </>
         ) : (
-          <ul className={``}>
+          <ul className={styles.link_cont_sm}>
             <li className={styles.link}>
               <Link href="/login">LOGIN</Link>
             </li>

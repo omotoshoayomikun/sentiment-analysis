@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "chart.js": "^4.4.4",
     "jose": "^5.9.6",
@@ -19,7 +20,9 @@
     "react-dom": "^18",
     "react-icons": "^5.3.0",
     "react-toastify": "^10.0.6",
-    "sentiment": "^5.0.2"
+    "recharts": "^2.13.3",
+    "sentiment": "^5.0.2",
+    "twitter-api-v2": "^1.18.2"
   },
   "devDependencies": {
     "eslint": "^8",
