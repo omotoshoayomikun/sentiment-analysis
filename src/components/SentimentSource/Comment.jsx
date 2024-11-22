@@ -22,7 +22,7 @@ function Comment() {
     userId: "",
     sentiment: "",
     message: "",
-    social: "",
+    social: "Sentiment",
     icon: "",
     color: "",
   });
@@ -66,7 +66,7 @@ function Comment() {
           setLoading({ ...loading, login: true });
           const body = JSON.stringify(value);
           const response = await CreateSentimentAction(
-            `${process.env.NEXT_PUBLIC_BASEURL}/api/sentiment/review/${params.id}`,
+            `${process.env.NEXT_PUBLIC_BASEURL}/api/sentiment/review/${value.userId}`,
             body
           );
           if (!response.success) {
@@ -122,6 +122,7 @@ function Comment() {
             padding: "7px 20px",
             marginLeft: "auto",
           }}
+          disabled={loading.login}
           handleClick={handleCreateSentiment}
         />
       </div>

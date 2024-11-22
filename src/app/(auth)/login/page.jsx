@@ -54,7 +54,7 @@ function Page() {
         toast.error(response.message, ToastOption);
       } else {
         toast.success(response.message, ToastOption);
-        router.push("/");
+        router.push("/result");
       }
     } catch (err) {
       setLoading({ ...loading, login: false });
