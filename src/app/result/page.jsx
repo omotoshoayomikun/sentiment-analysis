@@ -131,14 +131,14 @@ const dummyData = [
   },
 ];
 
-function page() {
+function Page() {
   const SentimentOverview = dynamic(
     () => import("@/components/SentimentSource/SentimentOverview"),
     { ssr: false }
   );
 
   // Memoize data so that the chart only updates when the actual data changes
-  const memoizedData = useMemo(() => chartData, [chartData]);
+  // const memoizedData = useMemo(() => chartData, [chartData]);
 
   const [loading, setLoading] = useState({ login: false });
   const [error, setError] = useState(false);
@@ -226,14 +226,14 @@ function page() {
             />
             <hr />
             {/* <SentimentLineChart data={memoizedData} /> */}
-            <SentimentOverview data={memoizedData} />
+            <SentimentOverview data={data} />
           </div>
           <div
             className="card mt-5"
             style={{ paddingTop: "10px", paddingBottom: "10px" }}
           >
-           <select name="" id="" className="border-2 p-2 py-1 ">
-            <option value="">Most Recent</option>
+           <select name="" id="" className="border-2 p-2 py-1 rounded-3">
+            <option value="">Recent first</option>
            </select>
           </div>
           {data.length > 0 &&
@@ -263,4 +263,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
