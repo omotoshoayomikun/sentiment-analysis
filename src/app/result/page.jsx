@@ -216,8 +216,8 @@ function Page() {
   return (
     <>
       <NavLink />
-      <div className="flex sidePadding gap-7 my-12 text-[#636363]">
-        <div className="flex-[1] max-w-[791px]">
+      <div className="flex md:flex-row flex-col sidePadding gap-7 my-12 text-[#636363]">
+        <div className="flex-[2] overflow-x-hidden">
           <div className="card h-[401px]">
             <Search
               handleSearch={handleSearch}
@@ -243,7 +243,7 @@ function Page() {
               </div>
             ))}
         </div>
-        <div className="w-[370px]">
+        <div className="flex-1">
           <div className="card">
             <SourceSentiment />
             <SentimentSelect

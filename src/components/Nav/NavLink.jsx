@@ -101,7 +101,7 @@ function NavLink() {
 
 {
   toggleSm && (
-      <div className={`${styles.nav_body_sm} md:hidden`}>
+      <div className={`${styles.nav_body_sm} md:hidden z-50`}>
         <ul className={styles.link_cont_sm}>
           <li className={styles.link}>
             <Link href="/">HOME</Link>

@@ -15,13 +15,14 @@ function SentimentLineChart(props) {
 
 
   return (
-    <div style={{ margin: "20px" }}>
+    <div className="overflow-x-scroll" style={{ margin: "20px" }}>
       {/* <h3>Sentiment Breakdown Over Time</h3> */}
       <LineChart
         width={700}
         height={250}
         data={props.data}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+          className="w-[700px] h-[250px]"
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
