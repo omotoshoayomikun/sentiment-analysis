@@ -37,7 +37,7 @@ function SentimentCard(props) {
             </ul>
           </div>
         </div>
-        <div className="text-[18px]">{props.data?.text}</div>
+        <div className="text-[18px] text-wrap">{props.data?.text}</div>
       </div>
     </>
   );

@@ -217,7 +217,7 @@ function Page() {
     <>
       <NavLink />
       <div className="flex sidePadding gap-7 my-12 text-[#636363]">
-        <div className="flex-[1]">
+        <div className="flex-[1] max-w-[791px]">
           <div className="card h-[401px]">
             <Search
               handleSearch={handleSearch}
