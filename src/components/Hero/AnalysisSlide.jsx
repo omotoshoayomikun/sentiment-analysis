@@ -2,7 +2,12 @@ import React from "react";
 
 function AnalysisSlide() {
   return (
-    <>
+    <div>
+      <h5
+        className={`sm:text-left text-center mb-4  block md:hidden`}
+      >
+        Sentiment Analysis/Emotion Analysis
+      </h5>
       <div className="flex gap-6 md:gap-11 overflow-hidden">
         <div className="">
           <h2 className="sm:text-[30px] text-[25px]  font-bold w-[120px] text-green-800">
@@ -35,7 +40,7 @@ function AnalysisSlide() {
           <small className="text-[15px]">Total Snapchat analysis</small>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
