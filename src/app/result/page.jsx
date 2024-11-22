@@ -144,8 +144,8 @@ function Page() {
   const [error, setError] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const [value, setValue] = useState("");
-  const [data, setData] = useState([...dummyData]);
-  const [keepData, setKeepData] = useState([...dummyData]);
+  const [data, setData] = useState();
+  const [keepData, setKeepData] = useState();
   const [checked, setChecked] = useState({
     positive: true,
     negative: true,
