@@ -1,9 +1,12 @@
-import { Lato } from "next/font/google";
+import { Lato, Roboto } from "next/font/google";
 import "./globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
 
-const lato = Lato({ weight: '400', subsets: ['latin'], display: 'swap', style: ['normal', 'italic'] });
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={lato.className}>
+      <body className={roboto.className}>
         {children}
         <ToastContainer />
         </body>

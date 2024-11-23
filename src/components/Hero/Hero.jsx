@@ -37,11 +37,11 @@ function Hero() {
                 Sentiment Analysis/Emotion Analysis
               </h5>
             </div>
-            <AnalysisSlide />
+            {/* <AnalysisSlide /> */}
             {user ? (
               <div>
-              <div className="flex items-center flex-wrap gap-3">
-                Perform <Link href="/result"  title="Click to perform sentiment analysis"  className="text-green-600 font-bold sm:text-[22px] text-[18px]">Sentiment</Link> Analysis On Social
+              <div className="flex items-center flex-wrap gap-3  sm:text-[25px] text-[18px]">
+                Perform <Link href="/result"  title="Click to perform sentiment analysis"  className="text-green-600 font-bold sm:text-[30px] text-[18px]">Sentiment</Link> Analysis On Social
 
               </div>
               </div>

@@ -15,6 +15,8 @@ import dynamic from "next/dynamic";
 import { useMemo, useState } from "react";
 import { toast } from "react-toastify";
 import { GetApi } from "../../lib/Actions";
+import ShowCase from "@/components/Hero/ShowCase";
+import Footer from "@/components/Footer/Footer";
 // import SentimentLineChart from "@/components/SentimentSource/SentimentLineChart";
 
 
@@ -201,8 +203,13 @@ const [errMsg, setErrMsg] = useState("");
         </div>
       </div> */}
       <Hero />
-      {/* <SocialQuote /> */}
-      {/* <SocialOptions /> */}
+      <SocialQuote />
+      <ShowCase />
+      <SocialOptions />
+      {/* <div className="mt-10"> */}
+      <Footer />
+
+      {/* </div> */}
     </main>
   );
 }
