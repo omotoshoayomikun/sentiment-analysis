@@ -60,14 +60,24 @@ function NavLink() {
             <>
               <div className="relative">
                 <div
-                  className="flex items-center cursor-pointer"
-                  onClick={handleToggle}
+                  className={`flex items-center cursor-pointer ${styles.toggleNav}`}
+                  onMouseEnter={() => setToggle(true)}
+                  onMouseLeave={() => setToggle(false)}
+                   // onClick={handleToggle}
                 >
                   <h3 className="mr-2 text-[18px]">{userEmail}</h3>
                   <FaCaretDown />
                 </div>
                 {toggle && (
-                  <div className={`absolute ${styles.drop_bar} `}>
+                <div 
+                className={`absolute ${styles.drop_bar} w-[200px] right-0 top-0 pt-[56px]`}
+                onMouseEnter={() => setToggle(true)}
+                onMouseLeave={() => setToggle(false)}
+                >
+                  <div
+                   className={`bg-[--soft-blue] p-3`}
+                  
+                   >
                     <ul className="">
                       <li className="">
                         <Link href="/profile" className="block">
@@ -86,6 +96,8 @@ function NavLink() {
                       </li>
                     </ul>
                   </div>
+
+                </div>
                 )}
               </div>
             </>

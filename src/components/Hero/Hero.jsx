@@ -33,11 +33,11 @@ function Hero() {
               <h1 className="text-[50px] font-bold leading-[3.5rem]  md:block hidden">
                 Welcome To The World Of Sentiment
               </h1>
-              <h5 className={`sm:mt-4 sm:mb-7 sm:text-left text-center  md:block hidden`}>
+              <h5 className={`sm:mt-4 sm:text-left text-center  md:block hidden`}>
                 Sentiment Analysis/Emotion Analysis
               </h5>
             </div>
-            {/* <AnalysisSlide /> */}
+            <AnalysisSlide />
             {user ? (
               <div>
               <div className="flex items-center flex-wrap gap-3  sm:text-[25px] text-[18px]">
