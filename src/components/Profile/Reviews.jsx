@@ -4,33 +4,11 @@ import { ToastOption } from "@/Data/ToastOption";
 import { GetApi } from "../../../lib/Actions";
 import Loading from "../Loading/Loading";
 
-function Reviews({ userId }) {
-  const [loading, setLoading] = useState({ login: false });
-  const [data, setData] = useState([]);
-  const [len, setLen] = useState({ start: 0, end: 3 });
+function Reviews({ data, loading }) {
+  // const [loading, setLoading] = useState({ login: false });
+  // const [len, setLen] = useState({ start: 0, end: 3 });
 
-  useEffect(() => {
-    const GetData = async () => {
-      try {
-        setLoading({ ...loading, login: true });
-        const response = await GetApi(
-          `${process.env.NEXT_PUBLIC_BASEURL}/api/user/profile/review/${userId}`
-        );
-        if (!response.success) {
-          toast.error(response.message, ToastOption);
-        } else {
-          setData(response.data);
-        }
-      } catch (error) {
-        toast.error(error.message, ToastOption);
-      } finally {
-        setLoading({ ...loading, login: false });
-      }
-    };
-    GetData();
-  }, [userId]);
-
-  if (loading.login) {
+  if (loading) {
     return (
       <>
       <div className="w-full h-[340px] relative">

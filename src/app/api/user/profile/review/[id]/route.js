@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server"
-import { Sentiment } from "../../../../../../../lib/Models/Sentiment"
+import { SentimentModel } from "../../../../../../../lib/Models/Sentiment"
 import { connectDB } from "../../../../../../../lib/database"
 
 export const GET = async (request, {params}) => {
     try {
         await connectDB()
         const id = params.id
-        const result = await Sentiment.find({userId: id})
+        const result = await SentimentModel.find({userId: id})
         if(result) {
             return NextResponse.json({message: "Success", data: result}, { status: 200 })
         } else {

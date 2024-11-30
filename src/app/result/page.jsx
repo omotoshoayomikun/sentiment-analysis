@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Comment from "@/components/SentimentSource/Comment";
 import SentimentCard from "@/components/SentimentSource/SentimentCard";
 import SentimentSelect from "@/components/SentimentSource/SentimentSelect";
@@ -17,119 +17,119 @@ import NavLink from "@/components/Nav/NavLink";
 // import SentimentOverview from "@/components/SentimentSource/SentimentOverview";
 import Search from "@/components/SentimentSource/Search";
 
-const chartData = [
+const chartDataDummy = [
   {
     name: "Jan",
-    postive: 4000,
+    positive: 4000,
     negative: 2400,
-    amt: 2400,
+    neutral: 2400,
   },
   {
     name: "Feb",
-    postive: 3000,
+    positive: 3000,
     negative: 1398,
-    amt: 2210,
+    neutral: 2210,
   },
   {
     name: "Mar",
-    postive: 3000,
+    positive: 3000,
     negative: 1398,
-    amt: 2210,
+    neutral: 2210,
   },
   {
     name: "Apr",
-    postive: 2000,
+    positive: 2000,
     negative: 9800,
-    amt: 2290,
+    neutral: 2290,
   },
   {
     name: "May",
-    postive: 2780,
+    positive: 2780,
     negative: 3908,
-    amt: 2000,
+    neutral: 2000,
   },
   {
     name: "Jun",
-    postive: 1890,
+    positive: 1890,
     negative: 4800,
-    amt: 2181,
+    neutral: 2181,
   },
   {
     name: "Jul",
-    postive: 2390,
+    positive: 2390,
     negative: 3800,
-    amt: 2500,
+    neutral: 2500,
   },
   {
     name: "Aug",
-    postive: 3490,
+    positive: 3490,
     negative: 4300,
-    amt: 2100,
+    neutral: 2100,
   },
   {
     name: "Sep",
-    postive: 3490,
+    positive: 3490,
     negative: 4300,
-    amt: 2100,
+    neutral: 2100,
   },
   {
     name: "Oct",
-    postive: 1890,
+    positive: 1890,
     negative: 4800,
-    amt: 2181,
+    neutral: 2181,
   },
   {
     name: "Nov",
-    postive: 2390,
+    positive: 2390,
     negative: 3800,
-    amt: 2500,
+    neutral: 2500,
   },
   {
     name: "Dec",
-    postive: 3490,
+    positive: 3490,
     negative: 4300,
-    amt: 2100,
+    neutral: 2100,
   },
 ];
 
-const dummyData = [
-  {
-    social: "reddit",
-    score: 5,
-    analyzed: "positive",
-    id: 12345,
-    user: "Unknown",
-    username: "Unknown",
-    text: "Forex is an easy way to make money",
-    created_at: "2024",
-    subreddit: "Unknown",
-    upvotes: 200,
-  },
-  {
-    social: "reddit",
-    score: -3,
-    analyzed: "negative",
-    id: 5689,
-    user: "Unknown",
-    username: "Unknown",
-    text: "Forex is an easy way to make money",
-    created_at: "2024",
-    subreddit: "Unknown",
-    upvotes: 200,
-  },
-  {
-    social: "reddit",
-    score: 0,
-    analyzed: "neutral",
-    id: 1976,
-    user: "Unknown",
-    username: "Unknown",
-    text: "Forex is an easy way to make money",
-    created_at: "2024",
-    subreddit: "Unknown",
-    upvotes: 200,
-  },
-];
+// const dummyData = [
+//   {
+//     social: "reddit",
+//     score: 5,
+//     analyzed: "positive",
+//     id: 12345,
+//     user: "Unknown",
+//     username: "Unknown",
+//     text: "Forex is an easy way to make money",
+//     created_at: "2024",
+//     subreddit: "Unknown",
+//     upvotes: 200,
+//   },
+//   {
+//     social: "reddit",
+//     score: -3,
+//     analyzed: "negative",
+//     id: 5689,
+//     user: "Unknown",
+//     username: "Unknown",
+//     text: "Forex is an easy way to make money",
+//     created_at: "2024",
+//     subreddit: "Unknown",
+//     upvotes: 200,
+//   },
+//   {
+//     social: "reddit",
+//     score: 0,
+//     analyzed: "neutral",
+//     id: 1976,
+//     user: "Unknown",
+//     username: "Unknown",
+//     text: "Forex is an easy way to make money",
+//     created_at: "2024",
+//     subreddit: "Unknown",
+//     upvotes: 200,
+//   },
+// ];
 
 function Page() {
   const SentimentOverview = dynamic(
@@ -145,6 +145,7 @@ function Page() {
   const [errMsg, setErrMsg] = useState("");
   const [value, setValue] = useState("");
   const [data, setData] = useState([]);
+  const [chartData, setChartData] = useState([]);
   const [keepData, setKeepData] = useState([]);
   const [checked, setChecked] = useState({
     positive: true,
@@ -173,6 +174,8 @@ function Page() {
       } else {
         setData(response.data);
         setKeepData(response.data);
+        const formattedData = formatChartData(response.data);
+        setChartData(formattedData);
         // toast.success(response.message, ToastOption);
       }
     } catch (e) {
@@ -181,6 +184,58 @@ function Page() {
       setLoading({ ...loading, login: false });
     }
   };
+
+
+  // Month mapping for names
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// Utility function to group and format data for chart
+function formatChartData(data) {
+  const monthlyData = {};
+
+  // Aggregate data by month
+  data.forEach((item) => {
+    const date = new Date(item.created_at); // Convert created_at to Date
+    const month = date.getMonth(); // Get the month (0-indexed)
+    const monthName = monthNames[month];
+
+    if (!monthlyData[monthName]) {
+      monthlyData[monthName] = { name: monthName, positive: 0, negative: 0, neutral: 0 };
+    }
+
+    // Increment sentiment counts
+    if (item.analyzed === "positive") {
+      monthlyData[monthName].positive++;
+    } else if (item.analyzed === "negative") {
+      monthlyData[monthName].negative++;
+    } else if (item.analyzed === "neutral") {
+      monthlyData[monthName].neutral++;
+    }
+  });
+
+  // Transform the object into an array for charting
+  return monthNames.map((month) => ({
+    name: month,
+    positive: monthlyData[month]?.positive || 0,
+    negative: monthlyData[month]?.negative || 0,
+    neutral: monthlyData[month]?.neutral || 0,
+  }));
+}
+
+
+  // const fetchData = async () => {
+  //   const response = await GetApi("/api/sentiment/social/reddit?query=example");
+  //   if (response.success) {
+  //     const groupedData = groupDataByMonth(response.data);
+  //     setChartData(groupedData);
+  //   }
+  // };
+
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+  
 
   const handleTwitter = async () => {
     try {
@@ -226,7 +281,7 @@ function Page() {
             />
             <hr />
             {/* <SentimentLineChart data={memoizedData} /> */}
-            <SentimentOverview data={chartData} />
+            <SentimentOverview data={chartData.length > 0? chartData : chartDataDummy} />
           </div>
           <div
             className="card mt-5"

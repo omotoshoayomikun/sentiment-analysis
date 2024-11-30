@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server"
 import { connectDB } from "../../../../../../lib/database"
-import { Sentiment } from "../../../../../../lib/Models/Sentiment"
+import { SentimentModel } from "../../../../../../lib/Models/Sentiment"
 
 export const POST = async (request) => {
     try {
         await connectDB();
         const { userId, message, social, sentiment } = await request.json();
 
-        const newSentiment = new Sentiment({
+        const newSentiment = new SentimentModel({
             userId, message, social, sentiment
         })
         await newSentiment.save();
@@ -22,7 +22,7 @@ export const POST = async (request) => {
 export const GET = async (request, {params}) => {
     try {
         await connectDB()
-        const result = await Sentiment.find({social: params.id})
+        const result = await SentimentModel.find({social: params.id})
         return NextResponse.json({message: "Success", data: result}, { status: 200 })
 
     } catch (err) {

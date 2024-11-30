@@ -19,7 +19,7 @@ export const GET = async (request, {params}) => {
     }
 }
 
-export const POST = async (request, {params}) => {
+export const PUT = async (request, {params}) => {
     
     try {
         await connectDB()
@@ -29,7 +29,7 @@ export const POST = async (request, {params}) => {
         if(result) {
             return NextResponse.json({message: "User Updated Successfully", data: result}, { status: 200 })
         } else {
-            return NextResponse.json({message: "An Error Occur"}, { status: 500 })
+            return NextResponse.json({message: "An Error Occur"}, { status: 403 })
 
         }
 

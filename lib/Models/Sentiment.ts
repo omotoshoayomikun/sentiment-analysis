@@ -20,4 +20,4 @@ const SentimentSchema = new mongoose.Schema({
     }
 }, {timestamps: true})
 
-export const Sentiment = mongoose.models.Sentiment || mongoose.model("Sentiment", SentimentSchema)
+export const SentimentModel = mongoose.models.Sentiment || mongoose.model("Sentiment", SentimentSchema)
