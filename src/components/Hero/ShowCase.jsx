@@ -6,7 +6,7 @@ function ShowCase() {
     <div className="bg-[#F6FBFA] w-full sm:flex block sidePadding md:py-10 py-3 md:gap-[80px] gap-[20px] items-center">
       <div className="flex-1">
         <div className="relative w-full h-[500px]">
-          <div className="relative md:w-[70%] w-[100%] h-full bg-[#a3c1bb] rounded-[40px]">
+          <div className="relative md:w-[70%] w-[100%] h-full bg-[#000] rounded-[40px]">
             <Image
               src="/images/site-removebg-preview.png"
               fill={true}
