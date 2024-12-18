@@ -8,7 +8,7 @@ function ShowCase() {
         <div className="relative w-full h-[500px]">
           <div className="relative md:w-[70%] w-[100%] h-full bg-[#a3c1bb] rounded-[40px]">
             <Image
-              src="/images/edited.png"
+              src="/images/site-removebg-preview.png"
               fill={true}
               className="object-contain"
               alt="student Image"
