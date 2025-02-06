@@ -21,7 +21,7 @@ export const getRedditAccessToken = async () => {
 };
 
 // Fetch Reddit posts based on a search query
-export const searchRedditPosts = async (query, limit = 100) => {
+export const searchRedditPosts = async (query, limit = 50) => {
   const token = await getRedditAccessToken();
 
   const response = await axios.get(

@@ -88,7 +88,7 @@ export default function Home() {
       </div> */}
       <Hero />
       <SocialQuote />
-      <ShowCase />
+      {/* <ShowCase /> */}
       <div className=" sidePadding bg-white py-12">
       
         <blockquote className="md:text-[45px] text-[25px] text-center text-gray-700 mb-10">Blogs </blockquote>

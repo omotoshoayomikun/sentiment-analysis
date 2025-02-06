@@ -28,7 +28,8 @@ function Search(props) {
           disabled={props.loading.login}
           title="Search"
           styles={{
-            width: "120px",
+            width: "max-content",
+            padding: "0px 15px",
             backgroundColor: "#007bff",
             height: "40px",
           }}
