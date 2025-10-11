@@ -30,7 +30,7 @@ function Search(props) {
           styles={{
             width: "max-content",
             padding: "0px 15px",
-            backgroundColor: "#007bff",
+            backgroundColor: "var(--s-blue)",
             height: "40px",
           }}
         />

@@ -7,7 +7,7 @@ export const Input = (props) => {
   return (
     <>
       <div className="">
-        <label className="text-[13px] font-[600]" htmlFor="">
+        <label className="text-[13px] font-[600] text-[var(--s-blue)]" htmlFor="">
           {label}
         </label>
         <div className={` mt-1`}>
@@ -33,7 +33,7 @@ export const SearchInput = (props) => {
         <div className="">
           <input
             {...values}
-            className="rounded-3xl w-full py-1 px-6 border-[#007bff] focus:outline-[#007bff] border-2 text-[18px] "
+            className="rounded-3xl w-full py-1 px-6 border-[var(--s-blue)] focus:outline-[#007bff] border-2 text-[18px] "
             style={rel_styles}
             onChange={(e) => handleOnchange(e, name)}
           />

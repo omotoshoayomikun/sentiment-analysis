@@ -91,7 +91,8 @@ export default function Home() {
       {/* <ShowCase /> */}
       <div className=" sidePadding bg-white py-12">
       
-        <blockquote className="md:text-[45px] text-[25px] text-center text-gray-700 mb-10">Blogs </blockquote>
+        <div className=" text-center text-[var(--soft-blue)] font-bold">BLOG & CASE STUDIES</div>
+        <div className="md:text-[45px] text-[25px] text-center text-[var(--s-blue)] font-extrabold mb-10">Our Latest News & Updates </div>
       <div className="grid md:grid-cols-3 grid-cols-1 gap-5 justify-center mb-8">
         {Blogs.map((blog, index) => (
           <MiniBlog key={index} data={blog} />

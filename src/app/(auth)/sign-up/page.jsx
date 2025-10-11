@@ -106,9 +106,9 @@ function Page() {
   return (
     <div className="w-full h-[100vh]">
       <NavLink />
-      <div className="w-full h-full flex justify-center items-center">
-        <div className={`login_card mt-[-140px]`}>
-          <h3 className="mb-5 text-[22px] font-bold text-center">SIGN UP</h3>
+      <div className="w-full h-[calc(100vh-84px)] flex justify-center items-center">
+        <div className={`login_card`}>
+          <h3 className="mb-5 text-[40px] font-extrabold text-center text-[var(--s-blue)]">SIGN UP</h3>
           <div>
             {Inputs.map((input, index) => (
               <div className="mb-5" key={index}>

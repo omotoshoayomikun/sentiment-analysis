@@ -6,9 +6,10 @@
   display: flex;
   align-items: center;
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
+  /* border-bottom: 2px solid var(--s-blue); */
   position: sticky;
   z-index: 200;
-  background-color: var(--soft-blue);
+  /* background-color: var(--soft-blue); */
   top: 0;
   left: 0;
 }
@@ -21,7 +22,7 @@
 
 .link_cont {
   display: flex;
-  color: #fff;
+  color: var(--s-blue);
 }
 
 .link {
@@ -64,7 +65,7 @@
   width: 100%;
   padding: 0;
   margin: 0;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .link_cont_sm > li {

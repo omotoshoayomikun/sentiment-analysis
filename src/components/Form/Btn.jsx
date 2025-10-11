@@ -15,7 +15,7 @@ export const Btn = (props) => {
 
 export const RoundBtn = (props) => {
   return (
-    <button className={`button-round rounded-full`} style={props.styles} onClick={props.handleClick}>{props.disabled ? (
+    <button className={`button-round rounded-full ${props.className}`} style={props.styles} onClick={props.handleClick}>{props.disabled ? (
       <CgSpinner size={25} className="animate-spin" />
     ) : (
       props.title

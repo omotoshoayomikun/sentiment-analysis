@@ -88,7 +88,7 @@ function Comment() {
   return (
     <>
       <div className="relative">
-        <h3 className="font-bold text-[18px] mb-4">Review</h3>
+        <h3 className="font-bold text-[18px] mb-4  text-[var(--s-blue)]">Review</h3>
 
         {value.sentiment && (
           <div

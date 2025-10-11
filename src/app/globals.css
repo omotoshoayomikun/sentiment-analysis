@@ -18,6 +18,8 @@
   --bg-bg: linear-gradient(316deg, #ffe190 0%, #fa9e8c 74%);
   --border-grey-color: #c2c2c2;
   --soft-blue: #4a90e2;
+  --s-blue: #1a3066;
+  --s-blue-dark: #001632;
   --light-blue: #d0e4f2;
   --mutted-grey: #b0bec5;
   --very-light-grey: #f4f6f9;
@@ -32,7 +34,7 @@
 } */
 
 body {
-  background-color: #d0e4f2;
+  /* background-color: #d0e4f2; */
 }
 
 .card {
@@ -40,12 +42,13 @@ body {
 }
 
 .login_card {
-  width: 380px;
+  max-width: 500px;
+  width: 90%;
   padding: 2.5rem 3.5rem;
   border-radius: 4px;
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5);
+  /* -webkit-box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5); */
+  /* box-shadow: 0px 5px 49px 0px rgba(0, 0, 0, 0.5); */
 }
 
 .button1 {
@@ -82,7 +85,8 @@ body {
   font-size: 14px;
   color: #ffffff;
   /* background: linear-gradient(147deg, #c62128 0%, #a00000 74%); */
-  background: linear-gradient(147deg, #2f83dc 0%, #007bff 74%);
+  /* background: linear-gradient(147deg, #2f83dc 0%, #007bff 74%); */
+  background-color: var(--s-blue);
   /* border-radius: 4px; */
   padding: 12px 10px;
   z-index: 1;

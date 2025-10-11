@@ -41,29 +41,29 @@ export const GET = async (request) => {
       );
     }
 
-    // const messages = await SentimentModel.find({
-    //  message: { $regex: query, $options: "i"} }).populate("userId");
+    const messages = await SentimentModel.find({
+     message: { $regex: query, $options: "i"} }).populate("userId");
 
-    // if (messages.length > 0) {
-    //   messages.forEach((value) => {
-    //     const result = sentiment.analyze(value.message);
-    //     TotalPosts.push({
-    //       id: value._id,
-    //       score: result.score,
-    //       analyzed:
-    //         result.score > 0
-    //           ? "positive"
-    //           : result.score < 0
-    //           ? "negative"
-    //           : "neutral",
-    //       user: value.userId ? value.userId._id : null,
-    //       username: value.userId?.firstname || value.userId?.email || "Unkonwn",
-    //       social: "Database",
-    //       text: value.message,
-    //       created_at: new Date (value.createdAt).toISOString(),
-    //     });
-    //   });
-    // }
+    if (messages.length > 0) {
+      messages.forEach((value) => {
+        const result = sentiment.analyze(value.message);
+        TotalPosts.push({
+          id: value._id,
+          score: result.score,
+          analyzed:
+            result.score > 0
+              ? "positive"
+              : result.score < 0
+              ? "negative"
+              : "neutral",
+          user: value.userId ? value.userId._id : null,
+          username: value.userId?.firstname || value.userId?.email || "Unkonwn",
+          social: "Database",
+          text: value.message,
+          created_at: new Date (value.createdAt).toISOString(),
+        });
+      });
+    }
 
     // Process the Reddit posts
     if (posts && posts.length > 0) {

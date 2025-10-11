@@ -11,7 +11,7 @@ function SourceSentiment() {
 
   return (
     <>
-      <h3 className="font-bold text-[18px]">Source</h3>
+      <h3 className="font-bold text-[18px] text-[var(--s-blue)]">Source</h3>
       <div className="flex flex-wrap w-full mt-5">
        <ul className="flex flex-wrap w-full">
         <li disabled className="basis-[50%] mb-4 items-center" >

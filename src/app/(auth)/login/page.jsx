@@ -1,5 +1,5 @@
 "use client";
-import { Btn } from "@/components/Form/Btn";
+import { Btn, RoundBtn } from "@/components/Form/Btn";
 import { Input } from "@/components/Form/Input";
 import NavLink from "@/components/Nav/NavLink";
 import Link from "next/link";
@@ -68,9 +68,9 @@ function Page() {
   return (
     <div className="w-full h-[100vh]">
       <NavLink />
-      <div className="w-full h-full flex justify-center items-center">
-        <div className={`login_card mt-[-140px]`}>
-          <h3 className="mb-5 text-[22px] font-bold text-center">LOGIN</h3>
+      <div className="w-full h-[calc(100vh-84px)] flex justify-center items-center">
+        <div className={`login_card`}>
+          <h3 className="mb-5 text-[40px] font-extrabold text-center text-[var(--s-blue)]">LOGIN</h3>
           <div>
             {Inputs.map((input, index) => (
               <div className="mb-5" key={index}>
@@ -84,7 +84,7 @@ function Page() {
             <div className="flex justify-between">
               <div className="flex items-center gap-2">
                 <input type="checkbox" name="" id="" />
-                <small className="font-bold text-[12px]">Remember Me</small>
+                <small className="font-bold text-[12px] text-[var(--s-blue)]">Remember Me</small>
               </div>
               <div className="">
                 <Link
@@ -95,8 +95,8 @@ function Page() {
                 </Link>
               </div>
             </div>
-            <div className="">
-              <Btn
+            <div className="mt-8">
+              <RoundBtn
                 title="Login"
                 handleClick={handlLogin}
                 disabled={loading.login}
@@ -105,7 +105,7 @@ function Page() {
             <div className="ml-auto mr-auto w-[max-content] mt-2">
               <Link
                 href="/sign-up"
-                className="text-center text-[--anchor-text-color] text-[12px]"
+                className="text-center text-[--anchor-text-color]"
               >
                 sign-up
               </Link>

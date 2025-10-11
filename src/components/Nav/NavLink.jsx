@@ -44,16 +44,16 @@ function NavLink() {
         <div className={`${styles.nav_body} md:flex hidden`}>
           <ul className={styles.link_cont}>
             <li className={styles.link}>
-              <Link href="/">HOME</Link>
+              <Link href="/">Home</Link>
             </li>
             <li className={styles.link}>
-              <Link href="/result">SENTIMENT ANALYSIS</Link>
+              <Link href="/result">Sentiment Analysis</Link>
             </li>
             <li className={styles.link}>
-              <Link href="/about">ABOUT</Link>
+              <Link href="/about">About</Link>
             </li>
             <li className={styles.link}>
-              <Link href="/blog">BLOG</Link>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
           {isLogin ? (
@@ -104,10 +104,10 @@ function NavLink() {
           ) : (
             <ul className={styles.link_cont}>
               <li className={styles.link}>
-                <Link href="/login">LOGIN</Link>
+                <Link href="/login">Login</Link>
               </li>
               <li className={styles.link}>
-                <Link href="/sign-up">SIGN UP</Link>
+                <Link href="/sign-up">Sign up</Link>
               </li>
             </ul>
           )}

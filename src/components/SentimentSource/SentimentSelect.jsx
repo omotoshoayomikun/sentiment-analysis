@@ -21,7 +21,7 @@ function SentimentSelect(props) {
 
   return (
     <>
-    <h3 className="font-bold text-[18px] mt-6 mb-2">Sentiment</h3>
+    <h3 className="font-bold text-[18px] mt-6 mb-2 text-[var(--s-blue)]">Sentiment</h3>
     <div className="flex justify-between">
         <div className="">
             <Checkbox handleCheckbox={handleCheckbox} checked={props.checked.positive} name="positive" /> <span className='text-green-700 font-bold'>Postive</span>
