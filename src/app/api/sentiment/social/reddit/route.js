@@ -21,6 +21,10 @@ export const GET = async (request) => {
     return socialPlatforms[Math.floor(Math.random() * socialPlatforms.length)];
   };
 
+  function escapeRegex(input) {
+    return input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
   if (!query) {
     return NextResponse.json(
       { message: "Query parameter is required." },
@@ -41,35 +45,43 @@ export const GET = async (request) => {
       );
     }
 
-    const messages = await SentimentModel.find({
-     message: { $regex: query, $options: "i"} }).populate("userId");
+    // const messages = await SentimentModel.find({
+    //   message: { $regex: new RegExp(escapeRegex(query)), $options: "i" }
+    // },
+    //   { message: 1, userId: 1, createdAt: 1 }
+    // ).populate("userId", "_id firstname email")
+    //   .sort({ createdAt: -1 })
+    //   .lean()
+    //   ;
 
-    if (messages.length > 0) {
-      messages.forEach((value) => {
-        const result = sentiment.analyze(value.message);
-        TotalPosts.push({
-          id: value._id,
-          score: result.score,
-          analyzed:
-            result.score > 0
-              ? "positive"
-              : result.score < 0
-              ? "negative"
-              : "neutral",
-          user: value.userId ? value.userId._id : null,
-          username: value.userId?.firstname || value.userId?.email || "Unkonwn",
-          social: "Database",
-          text: value.message,
-          created_at: new Date (value.createdAt).toISOString(),
-        });
-      });
-    }
+    // console.log(messages)
+
+    // if (messages.length > 0) {
+    //   messages.forEach((value) => {
+    //     const result = sentiment.analyze(value.message);
+    //     TotalPosts.push({
+    //       id: value._id,
+    //       score: result.score,
+    //       analyzed:
+    //         result.score > 0
+    //           ? "positive"
+    //           : result.score < 0
+    //             ? "negative"
+    //             : "neutral",
+    //       user: value.userId ? value.userId._id : null,
+    //       username: value.userId?.firstname || value.userId?.email || "Unkonwn",
+    //       social: "Database",
+    //       text: value.message,
+    //       created_at: new Date(value.createdAt).toISOString(),
+    //     });
+    //   });
+    // }
 
     // Process the Reddit posts
     if (posts && posts.length > 0) {
       posts.forEach((post) => {
         const result = sentiment.analyze(post.selftext || post.title || "");
-  
+
         TotalPosts.push({
           social: getRandomSocial(),
           score: result.score,
@@ -77,8 +89,8 @@ export const GET = async (request) => {
             result.score > 0
               ? "positive"
               : result.score < 0
-              ? "negative"
-              : "neutral",
+                ? "negative"
+                : "neutral",
           id: post.id,
           user: post.author || "Unknown",
           username: post.author || "Unknown",
@@ -87,7 +99,7 @@ export const GET = async (request) => {
           subreddit: post.subreddit || "Unknown",
           upvotes: post.ups || 0,
         })
-  
+
       });
     }
 

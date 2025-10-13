@@ -1,6 +1,6 @@
 "use client";
 
-import { Btn } from "@/components/Form/Btn";
+import { RoundBtn } from "@/components/Form/Btn";
 import { Input } from "@/components/Form/Input";
 import NavLink from "@/components/Nav/NavLink";
 import Link from "next/link";
@@ -127,7 +127,7 @@ function Page() {
             </div>
           )}
           <div className="">
-            <Btn
+            <RoundBtn
               title="Register"
               handleClick={handlRegister}
               disabled={loading.login}

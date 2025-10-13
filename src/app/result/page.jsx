@@ -92,53 +92,11 @@ const chartDataDummy = [
   },
 ];
 
-// const dummyData = [
-//   {
-//     social: "reddit",
-//     score: 5,
-//     analyzed: "positive",
-//     id: 12345,
-//     user: "Unknown",
-//     username: "Unknown",
-//     text: "Forex is an easy way to make money",
-//     created_at: "2024",
-//     subreddit: "Unknown",
-//     upvotes: 200,
-//   },
-//   {
-//     social: "reddit",
-//     score: -3,
-//     analyzed: "negative",
-//     id: 5689,
-//     user: "Unknown",
-//     username: "Unknown",
-//     text: "Forex is an easy way to make money",
-//     created_at: "2024",
-//     subreddit: "Unknown",
-//     upvotes: 200,
-//   },
-//   {
-//     social: "reddit",
-//     score: 0,
-//     analyzed: "neutral",
-//     id: 1976,
-//     user: "Unknown",
-//     username: "Unknown",
-//     text: "Forex is an easy way to make money",
-//     created_at: "2024",
-//     subreddit: "Unknown",
-//     upvotes: 200,
-//   },
-// ];
-
 function Page() {
   const SentimentOverview = dynamic(
     () => import("@/components/SentimentSource/SentimentOverview"),
     { ssr: false }
   );
-
-  // Memoize data so that the chart only updates when the actual data changes
-  // const memoizedData = useMemo(() => chartData, [chartData]);
 
   const [loading, setLoading] = useState({ login: false });
   const [error, setError] = useState(false);
@@ -153,10 +111,6 @@ function Page() {
     neutral: true,
   });
 
-  // const handleOnchange = (e) => {
-  //   const value = e.target.value;
-  //   setValue(value);
-  // };
 
   const handleSearch = async (e) => {
     setValue(e);
@@ -222,50 +176,22 @@ function formatChartData(data) {
   }));
 }
 
-
-  // const fetchData = async () => {
-  //   const response = await GetApi("/api/sentiment/social/reddit?query=example");
-  //   if (response.success) {
-  //     const groupedData = groupDataByMonth(response.data);
-  //     setChartData(groupedData);
+  // const handleTwitter = async () => {
+  //   try {
+  //     const response = await GetApi(
+  //       `${process.env.NEXT_PUBLIC_BASEURL}/api/sentiment/social/twitter?query=${value}`
+  //     );
+  //     if (!response.success) {
+  //       console.log(response)
+  //       toast.error(response.message, ToastOption);
+  //     } else {
+  //       console.log(response.data);
+  //       // setValue(response.data);
+  //       // toast.success(response.message, ToastOption);
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
   //   }
-  // };
-
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-  
-
-  const handleTwitter = async () => {
-    try {
-      const response = await GetApi(
-        `${process.env.NEXT_PUBLIC_BASEURL}/api/sentiment/social/twitter?query=${value}`
-      );
-      if (!response.success) {
-        toast.error(response.message, ToastOption);
-      } else {
-        console.log(response.data);
-        // setValue(response.data);
-        // toast.success(response.message, ToastOption);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  // const handleCheckbox = (e, name) => {
-  //   setChecked({...checked, [name]: !checked[name]});
-
-  //   if(!e.target.checked) {
-  //     const filterData = data.filter((content) => (content.analyzed  !== name))
-  //     setData(filterData)
-  //   } else {
-  //     const filterData = keepData.filter((content) => (content.analyzed  == name))
-
-  //     setData([...data, ...filterData])
-  //   }
-
   // };
 
   return (

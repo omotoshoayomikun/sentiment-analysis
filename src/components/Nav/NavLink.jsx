@@ -65,8 +65,8 @@ function NavLink() {
                   onMouseLeave={() => setToggle(false)}
                    // onClick={handleToggle}
                 >
-                  <h3 className="mr-2 text-[18px]">{userEmail}</h3>
-                  <FaCaretDown />
+                  <h3 className="mr-2 text-[18px] text-[#1a3066]">{userEmail}</h3>
+                  <FaCaretDown color="#1a3066" />
                 </div>
                 {toggle && (
                 <div 
@@ -75,7 +75,7 @@ function NavLink() {
                 onMouseLeave={() => setToggle(false)}
                 >
                   <div
-                   className={`bg-[--soft-blue] p-3`}
+                   className={`bg-[--s-blue] p-3`}
                   
                    >
                     <ul className="">
